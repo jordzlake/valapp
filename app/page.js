@@ -27,7 +27,7 @@ function NoButton({ btn, idx, chaosMove, hoveredStates, setHoveredStates }) {
       }}
       onClick={(e) => chaosMove(e, idx, true)}
     >
-      {hoveredStates[idx] ? "Yes 💖" : "No 😈"}
+      {hoveredStates[idx] ? "No 😈" : "No 😈"}
     </button>
   );
 }

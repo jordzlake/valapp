@@ -178,3 +178,17 @@ body {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
 }
+
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* prevent scroll when buttons fly off */
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
