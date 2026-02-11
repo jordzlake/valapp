@@ -52,21 +52,27 @@ body {
   margin-bottom: 40px;
 }
 
+.buttons {
+  position: relative;
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .btn {
   padding: 15px 40px;
   font-size: 1.2rem;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease; /* remove transform override */
   font-weight: 800;
   position: relative;
 }
 
 .btn:hover {
-  transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -75,18 +81,21 @@ body {
   color: white;
 }
 
-.buttons {
-  position: relative;
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+.btn.flood {
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px 16px;
 }
 
-.no {
+.btn.no {
   position: relative;
 }
+
+.fill {
+  font-size: 0.9rem;
+  padding: 10px 20px;
+}
+
 .success {
   animation: pop 0.6s ease forwards;
 }
@@ -151,4 +160,21 @@ body {
     transform: scale(1.1) rotate(0deg);
     opacity: 1;
   }
+}
+
+/* Min sizes for buttons */
+.btn.yes,
+.btn.no {
+  min-width: 60px;
+  min-height: 35px;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Flood grid adjustments */
+.buttons.flood {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
 }
